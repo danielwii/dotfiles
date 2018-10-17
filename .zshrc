@@ -13,6 +13,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export LANG=en_us
+
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs public_ip history)
@@ -39,24 +41,29 @@ source $ZPLUG_HOME/init.zsh
 
 # zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 # zplug "zsh-users/zsh-history-substring-search"
-zplug "lib/*", from:oh-my-zsh
+
 # zplug "lib/completion",   from:oh-my-zsh
 # zplug "lib/correction",   from:oh-my-zsh
 # zplug "lib/directories",  from:oh-my-zsh
 # zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/*", 			from:oh-my-zsh
+zplug "plugins/git", 	from:oh-my-zsh
+zplug "plugins/z", 		from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+
 zplug "supercrabtree/k"
-zplug "plugins/z", from:oh-my-zsh
-# zplug "knu/z", use:z.sh, defer:2
 
 if ! zplug check --verbose; then
-	printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+    # printf "Install? [y/N]: "
+    # if read -q; then
+    #     echo; zplug install
+    # fi
+    zplug install
 fi
 zplug load
 
@@ -71,3 +78,18 @@ export PATH=$FLUTTER_HOME/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# -- setup jenv --
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# -- alias --
+alias l='exa -@lahg --git --time-style long-iso'
+alias ll='exa -@lhg --git --time-style long-iso'
+alias ls='exa -G'
+
+# -- proxy --
+PROXY=http://127.0.0.1:8001
+SOCK_PROXY=socks5://127.0.0.1:1081
+NO_PROXY=10.*.*.*,192.168.*.*,*.local,localhost,127.0.0.1
+alias proxy='all_proxy=$PROXY; no_proxy=$NO_PROXY; http_proxy=$PROXY; https_proxy=$PROXY;'
+alias unsetproxy='unset all_proxy; unset no_proxy; unset http_proxy; unset https_proxy;'
