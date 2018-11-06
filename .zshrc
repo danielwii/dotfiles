@@ -13,10 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export LANG=en_us
+export LANG=en_US.UTF-8 
 
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs public_ip history)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
@@ -74,6 +74,9 @@ export LSCOLORS=
 export FLUTTER_HOME=$HOME/Development/sdks/flutter
 export PATH=$FLUTTER_HOME/bin:$PATH
 
+# -- brew sbin --
+export PATH="/usr/local/sbin:$PATH"
+
 # -- setup nvm --
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
@@ -91,5 +94,5 @@ alias ls='exa -G'
 PROXY=http://127.0.0.1:8001
 SOCK_PROXY=socks5://127.0.0.1:1081
 NO_PROXY=10.*.*.*,192.168.*.*,*.local,localhost,127.0.0.1
-alias proxy='all_proxy=$PROXY; no_proxy=$NO_PROXY; http_proxy=$PROXY; https_proxy=$PROXY;'
-alias unsetproxy='unset all_proxy; unset no_proxy; unset http_proxy; unset https_proxy;'
+alias proxy='export ALL_PROXY=$PROXY; export NO_PROXY=$NO_PROXY; export HTTP_PROXY=$PROXY; export HTTPS_PROXY=$PROXY;'
+alias unsetproxy='unset ALL_PROXY; unset NO_PROXY; unset HTTP_PROXY; unset HTTPS_PROXY;'
