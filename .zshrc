@@ -17,7 +17,7 @@ export LANG=en_US.UTF-8
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs public_ip history)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs history)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
@@ -81,14 +81,26 @@ export PATH="/usr/local/sbin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-# -- setup jenv --
+# -- setup jenv & java --
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# -- k8s helm
+export HELM_HOME=/Users/daniel/.helm
+source <(helm completion zsh)
+
+# -- setup thefuck
+eval $(thefuck --alias)
 
 # -- alias --
 alias l='exa -@lahg --git --time-style long-iso'
 alias ll='exa -@lhg --git --time-style long-iso'
 alias ls='exa -G'
+alias java_homes='/usr/libexec/java_home -V'
+alias java8="export JAVA_HOME=${/usr/libexec/java_home -v 1.8}"
+alias java10="export JAVA_HOME=${/usr/libexec/java_home -v 10}"
+alias java11="export JAVA_HOME=${/usr/libexec/java_home -v 11}"
 
 # -- proxy --
 PROXY=http://127.0.0.1:8001
