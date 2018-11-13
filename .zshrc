@@ -98,9 +98,9 @@ alias l='exa -@lahg --git --time-style long-iso'
 alias ll='exa -@lhg --git --time-style long-iso'
 alias ls='exa -G'
 alias java_homes='/usr/libexec/java_home -V'
-alias java8="export JAVA_HOME=${/usr/libexec/java_home -v 1.8}"
-alias java10="export JAVA_HOME=${/usr/libexec/java_home -v 10}"
-alias java11="export JAVA_HOME=${/usr/libexec/java_home -v 11}"
+alias java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+alias java10="export JAVA_HOME=`/usr/libexec/java_home -v 10`"
+alias java11="export JAVA_HOME=`/usr/libexec/java_home -v 11`"
 
 # -- proxy --
 PROXY=http://127.0.0.1:8001
