@@ -87,11 +87,15 @@ eval "$(jenv init -)"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # -- k8s helm
-export HELM_HOME=/Users/daniel/.helm
+export HELM_HOME=$HOME/.helm
 source <(helm completion zsh)
 
 # -- setup thefuck
 eval $(thefuck --alias)
+
+# -- setup golang
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin:/usr/local/opt/go/libexec/bin
 
 # -- alias --
 alias l='exa -@lahg --git --time-style long-iso'

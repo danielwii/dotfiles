@@ -14,6 +14,7 @@ brew install cocoapods
 brew install nvm
 brew install jenv
 brew install java8
+brew install go
 brew install gradle
 brew install git
 brew install git-flow
