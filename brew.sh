@@ -26,12 +26,17 @@ brew cask install docker
 brew cask install drawio
 brew cask install kindle
 brew cask install evernote
+brew cask install ngrok
 brew cask install telegram
 brew cask install visual-studio-code
 brew cask install graphql-playground
 # brew cask install java
 # brew cask install java8
 # brew cask install java10
+
+# fonts
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
 
 # brew install yarn
 brew install yarn --without-node
