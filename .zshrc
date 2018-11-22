@@ -94,12 +94,12 @@ source <(helm completion zsh)
 eval $(thefuck --alias)
 
 # -- setup golang
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 
 # -- alias --
-alias l='exa -@lahg --git --time-style long-iso'
-alias ll='exa -@lhg --git --time-style long-iso'
+alias l='exa -lahg --git --time-style long-iso'
+alias ll='exa -lhg --git --time-style long-iso'
 alias ls='exa -G'
 alias java_homes='/usr/libexec/java_home -V'
 alias java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
