@@ -66,6 +66,7 @@ brew install fkill
 brew install thefuck # Magnificent app which corrects your previous console command
 
 # net utils
+brew install aria2
 brew install http
 brew install httpie
 brew install httpstat
@@ -85,7 +86,18 @@ brew install poppler
 brew install gs
 brew install exa
 
+# https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md
+brew cask install osxfuse
+brew install gcsfuse
+sudo ln -s /usr/local/sbin/mount_gcsfuse /sbin  # For mount(8) support
+
+# https://github.com/cantino/mcfly
+# brew tap cantino/mcfly https://github.com/cantino/mcfly
+# brew install mcfly
+
 # k8s
+brew install kubectx
+brew install kube-ps1
 brew install kubernetes-helm
 brew install docker-machine-driver-hyperkit --ignore-dependencies docker-machine
 brew cask install minikube
