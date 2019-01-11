@@ -41,6 +41,8 @@ brew tap wagoodman/dive
 brew install dive
 
 # apps
+brew cask install insomnia
+brew cask install iina
 brew cask install vlc
 brew cask install docker
 brew cask install drawio
@@ -64,6 +66,7 @@ brew install pv
 brew install bat
 brew install fkill
 brew install thefuck # Magnificent app which corrects your previous console command
+brew install hexyl
 
 # net utils
 brew install aria2
@@ -76,6 +79,11 @@ brew cask install ngrok
 brew cask install v2rayx
 brew cask install shadowsocksx-ng
 brew cask install outline-manager
+
+# ving
+# https://github.com/yittg/ving
+brew tap yittg/iyg
+brew install ving
 
 # https://github.com/jpr5/ngrep
 brew install ngrep
@@ -99,8 +107,8 @@ sudo ln -s /usr/local/sbin/mount_gcsfuse /sbin  # For mount(8) support
 brew install kubectx
 brew install kube-ps1
 brew install kubernetes-helm
-brew install docker-machine-driver-hyperkit --ignore-dependencies docker-machine
-brew cask install minikube
+# brew install docker-machine-driver-hyperkit --ignore-dependencies docker-machine
+# brew cask install minikube
 
 # infrastructure as code
 brew install terraform
